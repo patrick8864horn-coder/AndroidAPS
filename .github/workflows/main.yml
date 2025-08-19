@@ -5,6 +5,7 @@ on:
     branches: [ "3.3.3.a+aisf3.1.0" ]
   pull_request:
     branches: [ "3.3.3.a+aisf3.1.0" ]
+  workflow_dispatch:   # <-- manueller Start per Button möglich
 
 jobs:
   build:

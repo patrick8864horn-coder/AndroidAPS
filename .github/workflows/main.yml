@@ -41,9 +41,8 @@ jobs:
 
     # APK direkt in Google Drive hochladen
     - name: Upload to Google Drive
-      uses: adityak74/google-drive-upload-action@v1
-      with:
-        filename: app/build/outputs/apk/release/app-release.apk
-        folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
-      env:
-        GDRIVE_OAUTH2: ${{ secrets.GDRIVE_OAUTH2 }}
+  uses: gdrive-org/gdrive-upload-action@v2
+   with:
+  credentials_json: ${{ secrets.GDRIVE_JSON }}
+  folder_id: ${{ secrets.GDRIVE_FOLDER_ID }}
+  files: app/build/outputs/apk/release/*.apk

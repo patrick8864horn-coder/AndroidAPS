@@ -132,8 +132,12 @@ jobs:
           fi
           echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
           echo "✅ Access token obtained."
-      - name: Checkout source code
-        uses: actions/checkout@v4
+- name: Checkout source code
+  uses: actions/checkout@v4
+  with:
+    repository: nightscout/AndroidAPS
+    ref: master
+
 
       - name: Set BUILD_VARIANT
         run: |
